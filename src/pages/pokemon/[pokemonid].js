@@ -1,17 +1,17 @@
 import Image from "next/image"
 import styles from "../../styles/Pokemon.module.css"
-export const getStaticPaths = async () => {
+export const getStaticPaths = async() => {
 
-    const maxPokemons = 251
-    const api = 'https://pokeapi.co/api/v2/pokemon/'
+    const maxPokemons = 251;
+    const api = 'https://pokeapi.co/api/v2/pokemon/';
   
-    const res = await fetch(`${api}/?limit=${maxPokemons}`)
-    const data = await res.json()
+    const res = await fetch(`${api}/?limit=${maxPokemons}`);
+    const data = await res.json();
 
     // params
     const paths = data.results.map((pokemon, index) => {
         return {
-            params: { pokemonid: (index + 1).toString() },
+            params: {pokemonId: (index + 1).toString() },
         }
     })
 
@@ -23,7 +23,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async(context) => {
 
- const id = context.params.pokemonid
+ const id = context.params.pokemonId
 
  const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
 
