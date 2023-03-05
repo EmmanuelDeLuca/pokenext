@@ -6,7 +6,7 @@ export default function About() {
             <h1>
                 Sobre o projeto
             </h1>
-            <p> Esse projeto......... </p>
+            <p>PokeNext é um App construído em Next.js para consultar Pokémons.</p>
             <Image src="/images/blastoise.png" width="300" height="300" alt="Imagem do Blastoise"/>
         </div>
     )
